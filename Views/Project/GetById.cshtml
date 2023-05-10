@@ -1,0 +1,83 @@
+﻿@model Project.Data.Entities.Project
+
+
+
+
+
+    <div class="row col-lg-12 col-md-12 col-sm-12 gap-3 d-flex justify-content-center">
+
+
+
+
+         <div class="card" style="width: 30%;box-shadow: 0 0rem 3rem rgba(8,7,16,0.6)!important;">
+                 <img src="@Model.PhotoUrl" class="card-img-top" alt="RASM">
+             <div class="card-body">
+                     <h4 class="card-title">Name: @Model.Name</h4>
+                       <h5>Creator Name: @Model.User.Firstname</h5>
+                       <h5>Creator Username: @Model.User.UserName</h5>
+                       <h5>Description: @Model.Description</h5>
+                       <h5>Source Code: <a class="btn btn-primary" href="@Model.SourceCodeLink">GitHub</a></h5>
+                       <h5> Web Link: <a class="btn btn-primary" href="@Model.ProjectWebLink">www.@Model.Name</a></h5>
+                       
+             </div>
+        </div>
+    </div>
+
+
+<br/>
+<br/>
+<br/>
+
+<div style="border-radius: 20px;
+
+    box-shadow: 0 0rem 3rem rgba(8,7,16,0.6)!important;">
+    <section >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 col-md-6 col-12 pb-4">
+                    <h1 class="text-dark">Comments</h1>
+                    
+                    @for(var i=0;i < Model.Comments.Count ;i++)
+                    {
+
+                    <div class="comment mt-4 text-justify float-left">
+                            <img src="@Model.Comments[i].User.PhotoUrl" alt="" class="rounded-circle" width="40" height="40">
+                            <h4>@Model.Comments[i].User.Firstname</h4>
+                        <span>@Model.Comments[i].Created</span>
+                        <br>
+                            <p>@Model.Comments[i].Comment </p>
+                    </div>
+
+
+                    }
+
+                    @*  <div class="text-justify darker mt-4 float-right">
+                        <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
+                        <h4>Rob Simpson</h4>
+                        <span>- 20 October, 2018</span>
+                        <br>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
+                    </div>*@
+
+                </div>
+                
+                
+
+                <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+                    <form id="algin-form" asp-controller="Project" asp-action="AddComment" asp-route-projectId="@Model.Id" method="post">
+                        <div class="form-group">
+                            <h4>Loyiha haqida Izoh qoldiring</h4>
+                            <label for="message">Message</label>
+                            
+                            <input name="Comment" class="form-control" placeholder="Comment" type="text" style="background-color:white"; />
+                            @* <textarea name="msg" id="" msg cols="30" rows="5" class="form-control" style="background-color: white;"></textarea>*@
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="post" class="btn">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

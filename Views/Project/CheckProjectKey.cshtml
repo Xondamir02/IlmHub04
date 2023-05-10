@@ -1,0 +1,26 @@
+﻿@model ProjectKeyDto
+
+<div class="modal-dialog" style=" border-radius: 60px; box-shadow: 0 0 40px rgba(8,7,16,0.6);">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title  text-danger " >Loyiha qo'shish uchun Kalitni kiriting</h5>
+            <a class="btn btn-close btn-outline-danger" asp-area="" asp-controller="Project" asp-action="Index" aria-label="Close"></a>
+        </div>
+
+        <div class="modal-body">
+            <form class="row g-3 col-md-10"  asp-controller="Project" asp-action="CheckProjectKey"  method="post">
+
+                <div class="mb-3">
+                    <input name="ProjKey" class="form-control" asp-for="ProjKey" type="text" placeholder="Enter KEY" />
+                    <span class="text-danger" asp-validation-for="ProjKey"></span>
+                </div>
+                <div class="modal-footer" style="padding:28px">
+                <button class="form-control btn-primary" type="submit"> Submit</button>
+
+                </div>
+            </form>
+        </div>
+@*        <div class="modal-footer" style="padding: 28px">
+        </div>*@
+    </div>
+</div>

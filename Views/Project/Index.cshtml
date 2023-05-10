@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model List<Project.Data.Entities.Project>
+
+<a class="btn btn-primary" asp-controller="Project" asp-action="CheckProjectKey">Add Project</a>
+
+
+<div class="row col-lg-12 col-md-12 col-sm-12 gap-3 d-flex justify-content-center">
+
+    @for (var i = 0; i < Model.Count; i++)
+    {
+        var project = Model[i];
+
+        <div class="card" style="width: 30%;box-shadow: 0 0rem 3rem rgba(8,7,16,0.6)!important;">
+            <img src="@project.PhotoUrl" class="card-img-top" alt="RASM">
+            <div class="card-body">
+                <h4 class="card-title">Name: @project.Name</h4>
+                <h5>Creator: @project.User.Firstname</h5>
+               
+                <a class="btn btn-primary" asp-action="GetById" asp-route-projectId="@project.Id">View</a>
+
+            </div>
+        </div>
+    }
+</div>
