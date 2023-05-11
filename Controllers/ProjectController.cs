@@ -75,8 +75,8 @@ public class ProjectController : Controller
     public async Task<IActionResult> GetById(Guid projectId)
     {
         var project = await _context.Projects
-            .Include(p => p.User)
-            .ThenInclude(c => c.Comments)
+            .Include(c => c.Comments)
+            .ThenInclude(u=>u.User)
             .FirstOrDefaultAsync(p => p.Id == projectId);
 
         return View(project);
