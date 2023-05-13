@@ -77,6 +77,7 @@ public class ProjectController : Controller
         var project = await _context.Projects
             .Include(c => c.Comments)
             .ThenInclude(u=>u.User)
+            .Include(p=>p.User)
             .FirstOrDefaultAsync(p => p.Id == projectId);
 
         return View(project);
