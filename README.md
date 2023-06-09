@@ -1,6 +1,6 @@
 # IlmHub04
 
-Skill-shring web application in which you can share your project and get comment from others
+Skill-sharing web application in which you can share your project and get comment from others
 
 Website Link: https://project002.bsite.net/
 
