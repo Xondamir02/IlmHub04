@@ -10,6 +10,5 @@ Website Link: https://project002.bsite.net/
 
 ![image](https://github.com/Xondamir02/IlmHub04/assets/89469811/09338997-048c-4d49-8eb1-1b28c8a1393a)
 
-![image](https://github.com/Xondamir02/IlmHub04/assets/89469811/97fe17de-3fbc-4c49-8368-735bfaa1d6e0)
 
 ![image](https://github.com/Xondamir02/IlmHub04/assets/89469811/31e64fad-1bc9-45a6-ad9a-27ccb2c327d1)
